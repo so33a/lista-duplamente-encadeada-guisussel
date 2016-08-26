@@ -78,6 +78,37 @@ link buscar(ListaDupla l, int item) {
 void insereAntes (ListaDupla l, link x, link t);
 */
 
+/*
+Implemente no arquivo listaDupla.c a função que busca o menor elemento da lista.
+*/
+link buscarMenor(ListaDupla l) {
+    link t = l->head;
+    link aux = t;
+  while ( t != l->z ) {
+    if(t->item < aux->item)
+      aux=t;
+    t = t->next;
+  }
+  return aux;
+}
+
+/*
+Implemente no arquivo listaDupla.c a função que ordena a lista
+*/
+listaDupla ordenaLista(ListaDupla l){
+  ListaDupla novaLista = inicializa();
+ 
+  1- buscamenor L
+  2- insereDepois ListaNova
+  3- free lista L
+  4- retorna listaNova
+  
+  
+  
+  
+  
+}
+
 void destroiLista(ListaDupla l) {
   link t = l->head;
   while (t != l->z) {
