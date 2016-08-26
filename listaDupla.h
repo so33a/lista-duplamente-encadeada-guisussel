@@ -23,4 +23,14 @@ void imprime(ListaDupla l);
 void imprimeReverso(ListaDupla l);
 void destroiLista(ListaDupla l);
 
+/*
+Acrescente um protótipo no arquivo listaDupla.h para uma função que encontra o nó com o menor elemento da lista duplamente encadeada. 
+Esta função deve devolver um link para o nó encontrado.
+*/
+link buscaMenor(ListaDupla l);
+/*
+Acrescente um protótipo no arquivo listaDupla.h para uma função que ordena uma lista duplamente encadeada.
+*/
+listaDupla ordenaLista(ListaDupla l, ListaDupla m);
+
 #endif
