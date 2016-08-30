@@ -32,7 +32,7 @@ void insereDepois (ListaDupla l, link x, link t) {
     t->next = l->z;
     t->prev = l->z;
     l->z->prev = t;
-    l->z->next = t; 
+    l->z->next = t;
   } else {
     t->next = x->next;
     t->prev = x;
@@ -74,7 +74,7 @@ link buscar(ListaDupla l, int item) {
   }
   return NULL;
 }
-/* 
+/*
 void insereAntes (ListaDupla l, link x, link t);
 */
 
@@ -95,18 +95,23 @@ link buscarMenor(ListaDupla l) {
 /*
 Implemente no arquivo listaDupla.c a função que ordena a lista
 */
-listaDupla ordenaLista(ListaDupla l){
-  ListaDupla novaLista = inicializa();
- 
-  1- buscamenor L
-  2- insereDepois ListaNova
-  3- free lista L
-  4- retorna listaNova
-  
-  
-  
-  
-  
+ListaDupla ordenaLista(ListaDupla l){
+    link aux = l-> head;
+
+    ListaDupla novaLista = inicializa();
+
+    while (aux != l->z ) {
+        insereDepois(novaLista, novaLista->z->prev, removeNo(buscarMenor(l)));
+
+        aux = aux->next;
+        printf("aqui");
+    }
+    destroiLista(l);
+    return novaLista;
+  //1- buscamenor L
+  //2- insereDepois ListaNova
+  //3- free lista L
+  //4- retorna listaNova
 }
 
 void destroiLista(ListaDupla l) {
@@ -115,9 +120,9 @@ void destroiLista(ListaDupla l) {
     l->head = t->next;
     l->z->next = t->next;
     l->head->prev = l->z;
-    free(t); 
+    free(t);
     t = l->head;
-  } 
+  }
   free(t);
   free(l);
 }
